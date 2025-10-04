@@ -466,6 +466,31 @@ body {
   font-size: 1.2rem;
 }
 
+.nav-btn.admin-portal {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.nav-btn.admin-portal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+}
+
+.nav-btn.admin-portal span {
+  font-size: 1.2rem;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .info-content h1 {

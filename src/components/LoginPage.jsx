@@ -25,7 +25,6 @@ const LoginPage = () => {
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     
-    // Admin login state
 
     // --- Signup Handler ---
     const handleSignup = async (e) => {
@@ -158,12 +157,6 @@ const LoginPage = () => {
         }
     };
 
-    // --- Admin Login Handler ---
-    const handleAdminLogin = (adminUser) => {
-        setShowAdminLogin(false);
-        // Go to user dashboard first, then user can access admin from there
-        navigate('/dashboard', { state: { isAdmin: false, user: adminUser, hasAdminAccess: true } });
-    };
 
     // --- Direct User Access Handler (No Authentication) ---
     const handleDirectUserAccess = () => {
@@ -400,6 +393,14 @@ const LoginPage = () => {
                                 >
                                     <span>👤</span>
                                     <strong>User Access</strong>
+                                </button>
+                                <button 
+                                    type="button" 
+                                    className="nav-btn admin-portal"
+                                    onClick={() => navigate('/dashboard', { state: { isAdmin: true, adminUser: { id: 1, email: 'admin@expenseflow.com', name: 'Admin User', role: 'admin' } } })}
+                                >
+                                    <span>🔐</span>
+                                    <strong>Admin Portal</strong>
                                 </button>
                             </>
                         )}
